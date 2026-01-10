@@ -1,0 +1,9 @@
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\bin\Debug\PruebaWeb.Logic.dll
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\bin\Debug\PruebaWeb.Logic.pdb
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\bin\Debug\PruebaWeb.Entities.dll
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\bin\Debug\PruebaWeb.Repository.dll
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\bin\Debug\PruebaWeb.Entities.pdb
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\bin\Debug\PruebaWeb.Repository.pdb
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\obj\Debug\PruebaWeb.Logic.csprojResolveAssemblyReference.cache
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\obj\Debug\PruebaWeb.Logic.dll
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Logic\obj\Debug\PruebaWeb.Logic.pdb

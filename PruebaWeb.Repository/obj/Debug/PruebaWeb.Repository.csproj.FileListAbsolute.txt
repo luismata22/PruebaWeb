@@ -1,0 +1,7 @@
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Repository\bin\Debug\PruebaWeb.Repository.dll
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Repository\bin\Debug\PruebaWeb.Repository.pdb
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Repository\bin\Debug\PruebaWeb.Entities.dll
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Repository\bin\Debug\PruebaWeb.Entities.pdb
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Repository\obj\Debug\PruebaWeb.Repository.csprojResolveAssemblyReference.cache
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Repository\obj\Debug\PruebaWeb.Repository.dll
+C:\Users\Ryzen\OneDrive\Documentos\Proyectos\PruebaWeb\Solucion\PruebaWeb.Web\PruebaWeb.Repository\obj\Debug\PruebaWeb.Repository.pdb
