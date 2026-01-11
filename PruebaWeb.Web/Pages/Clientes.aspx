@@ -101,8 +101,8 @@
                 </div>
                 <div><small id="msg"></small></div>
                 <div class="buttons">
-                    <button id="btnGuardar" class="ui-button ui-widget ui-corner-all">Guardar</button>
-                    <button id="btnCancelar" class="ui-button ui-widget ui-corner-all">Cancelar</button>
+                    <button id="btnGuardar" class="ui-button ui-widget ui-corner-all"><i class="fa fa-floppy-disk"></i> Guardar</button>
+                    <button id="btnCancelar" class="ui-button ui-widget ui-corner-all"><i class="fa fa-xmark"></i> Cancelar</button>
                 </div>
                 <hr />
             </section>
@@ -168,7 +168,19 @@
 
             $('#btnCerrarSesion').click(cerrarsesion);
 
-            $('#btnLimpiar').click(limpiarfiltros)
+            $('#btnLimpiar').click(limpiarfiltros);
+
+            document.getElementById("fCedula").addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    buscar();
+                }
+            });
+
+            document.getElementById("fNombre").addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    buscar();
+                }
+            });
         });
 
         // Método para cargar los estados civiles en el select
@@ -244,7 +256,7 @@
 
         // Método para limpiar los filtros de búsqueda
         function limpiarfiltros() {
-            $('#fCedula,#fNombre', '#fGenero').val('');
+            $('#fCedula,#fNombre,#fGenero').val('');
             $('#fEstadoCivil').val('-1');
         }
 

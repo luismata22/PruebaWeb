@@ -27,24 +27,40 @@
             <form id="frmLogin">
                 <div>
                     <label>Usuario</label>
-                    <input type="text" id="txtUser" title="Ingrese su usuario" class="ui-widget ui-widget-content ui-corner-all"/>
+                    <input type="text" id="txtUser" title="Ingrese su usuario" class="ui-widget ui-widget-content ui-corner-all" />
                 </div>
                 <div style="margin-top: 10px">
                     <label>Contraseña</label>
-                    <input type="password" id="txtPass" title="Ingrese su contraseña" class="ui-widget ui-widget-content ui-corner-all"/>
+                    <input type="password" id="txtPass" title="Ingrese su contraseña" class="ui-widget ui-widget-content ui-corner-all" />
                 </div>
                 <div><small id="msg"></small></div>
                 <div style="margin-top: 10px">
-                    <button type="button" id="btnLogin" class="full-width ui-button ui-widget ui-corner-all"><i class ="fa fa-right-to-bracket"></i> Entrar</button>
+                    <button type="button" id="btnLogin" class="full-width ui-button ui-widget ui-corner-all"><i class="fa fa-right-to-bracket"></i>Entrar</button>
                 </div>
-                
+
             </form>
         </div>
     </div>
 
     <script>
-        <!-- Click de btnLogin para iniciar sesion dentro del aplicativo -->
+        document.getElementById("txtUser").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                IniciarSesion();
+            }
+        });
+
+        document.getElementById("txtPass").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                IniciarSesion();
+            }
+        });
+
+        // Click de btnLogin para iniciar sesion dentro del aplicativo
         $('#btnLogin').on('click', function () {
+            IniciarSesion();
+        });
+
+        function IniciarSesion() {
             if ($('#txtUser').val() != "" && $('#txtPass').val() != "") {
                 var pass = $('#txtPass').val();
                 var payload = {
@@ -73,8 +89,7 @@
             } else {
                 $('#msg').text('Ingrese las credenciales');
             }
-            
-        });
+        }
     </script>
 </body>
 </html>
