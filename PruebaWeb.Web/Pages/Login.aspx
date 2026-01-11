@@ -4,44 +4,73 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Login</title>
-    <link rel="stylesheet" href="/Content/estilos.css" />
+    <title>Inicio de sesión</title>
+    <link href="~/Content/estilos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
     <script src="/Scripts/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="card">
-        <div>
-            <h2>Inicio de sesión</h2>
+        <div class="box-login">
+            <h2 class="aling-center">Inicio de sesión</h2>
+            <form id="frmLogin">
+                <div>
+                    <label>Usuario</label>
+                    <input type="text" id="txtUser" title="Ingrese su usuario" class="ui-widget ui-widget-content ui-corner-all"/>
+                </div>
+                <div style="margin-top: 10px">
+                    <label>Contraseña</label>
+                    <input type="password" id="txtPass" title="Ingrese su contraseña" class="ui-widget ui-widget-content ui-corner-all"/>
+                </div>
+                <div><small id="msg"></small></div>
+                <div style="margin-top: 10px">
+                    <button type="button" id="btnLogin" class="full-width ui-button ui-widget ui-corner-all"><i class ="fa fa-right-to-bracket"></i> Entrar</button>
+                </div>
+                
+            </form>
         </div>
-        <form id="frmLogin">
-            <div>
-                <label>Usuario</label>
-                <input type="text" id="txtUser" title="Ingrese su usuario" />
-            </div>
-            <div>
-                <label>Contraseña</label>
-                <input type="password" id="txtPass" title="Ingrese su contraseña" />
-            </div>
-            <div>
-                <button type="button" id="btnLogin">Entrar</button>
-            </div>
-            <div id="msg"></div>
-        </form>
     </div>
 
     <script>
         $('#btnLogin').on('click', function () {
-            $.post('Login.aspx?act=login', {
-                user: $('#txtUser').val(),
-                pass: $('#txtPass').val()
-            }).done(function (ok) {
-                if (ok === 'OK') {
-                    document.cookie = 'PruebaWebAuth=1;path=/';
-                    window.location = 'Clientes.aspx';
-                } else {
-                    $('#msg').text('Credenciales inválidas');
-                }
-            });
+            if ($('#txtUser').val() != "" && $('#txtPass').val() != "") {
+                var payload = {
+                    usuario: $('#txtUser').val(),
+                    password: $('#txtPass').val()
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "Login.aspx/IniciarSesion",
+                    data: JSON.stringify(payload),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (res) {
+                        var result = res.d;
+                        if (result === true) {
+                            window.location = 'Clientes.aspx';
+                        } else {
+                            $('#msg').text('Credenciales inválidas');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error en la llamada:", status, error);
+                        console.log(xhr.responseText);
+                    }
+                });
+            } else {
+                $('#msg').text('Ingrese las credenciales');
+            }
+            
         });
     </script>
 </body>
