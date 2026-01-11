@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="PruebaWeb.Web.Pages.Login" %>
 
 <!DOCTYPE html>
-
+<!-- Pagina inicial de login -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Inicio de sesión</title>
@@ -18,6 +18,7 @@
         }
     </style>
     <script src="/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
     <div class="card">
@@ -42,11 +43,13 @@
     </div>
 
     <script>
+        <!-- Click de btnLogin para iniciar sesion dentro del aplicativo -->
         $('#btnLogin').on('click', function () {
             if ($('#txtUser').val() != "" && $('#txtPass').val() != "") {
+                var pass = $('#txtPass').val();
                 var payload = {
                     usuario: $('#txtUser').val(),
-                    password: $('#txtPass').val()
+                    password: CryptoJS.SHA256(pass).toString()
                 };
                 $.ajax({
                     type: "POST",

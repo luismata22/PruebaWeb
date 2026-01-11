@@ -9,6 +9,8 @@ namespace PruebaWeb.Repository
 {
     public class ClienteRepository
     {
+        // Método de crear y modificar clientes
+        // Ejecución del sp spInsertarModificarSEVECLIE con los parámetros recibidos
         public int CrearModificarClientes(Cliente c)
         {
             using (var cn = DBConnection.GetConnection())
@@ -26,6 +28,8 @@ namespace PruebaWeb.Repository
             }
         }
 
+        // Método de eliminar clientes
+        // Ejecución del sp spEliminarSEVECLIE con los parámetros recibidos
         public bool Eliminar(long id)
         {
             using (var cn = DBConnection.GetConnection())
@@ -39,6 +43,8 @@ namespace PruebaWeb.Repository
             }
         }
 
+        // Método de consultar clientes mediante filtros
+        // Ejecución del sp spConsultarSEVECLIE con los parámetros recibidos
         public List<Cliente> ConsultarClientes(string cedula, string nombre, string genero, int estadocivilid)
         {
             var list = new List<Cliente>();
@@ -71,6 +77,8 @@ namespace PruebaWeb.Repository
             return list;
         }
 
+        // Método de consulta un cliente por el id
+        // Ejecución del sp spConsultarClienteSEVECLIE con los parámetros recibidos
         public Cliente ConsultarClientePorId(long id)
         {
             var list = new List<Cliente>();

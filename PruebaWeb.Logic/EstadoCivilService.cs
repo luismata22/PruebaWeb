@@ -8,6 +8,7 @@ namespace PruebaWeb.Logic
     {
         private readonly EstadoCivilRepository repo = new EstadoCivilRepository();
 
+        // Método de consultar todos los estados civiles
         public List<EstadoCivil> Consultar() => repo.ConsultarEstadoCivil();
     }
 }

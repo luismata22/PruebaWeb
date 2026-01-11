@@ -110,7 +110,6 @@
     <Content Include="Pages\Clientes.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Reporte.aspx" />
-    <Content Include="Scripts\javascript.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Web.config">

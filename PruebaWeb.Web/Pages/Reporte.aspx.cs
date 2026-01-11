@@ -12,6 +12,9 @@ namespace PruebaWeb.Web.Pages
         {
             if (!IsPostBack)
             {
+                // Se reciben los parámetros del filtro de búsqueda de la pantalla de clientes
+                // Se configura el reportviewer (Clientes.rdlc)
+                // Se limpia y se llenan los datos del reporte con el resultado de la búsqueda
                 var cedula = string.IsNullOrWhiteSpace(Request.QueryString["cedula"]) ? null : Request.QueryString["cedula"];
                 var nombre = string.IsNullOrWhiteSpace(Request.QueryString["nombre"]) ? null : Request.QueryString["nombre"];
                 var genero = string.IsNullOrWhiteSpace(Request.QueryString["genero"]) ? null : Request.QueryString["genero"];

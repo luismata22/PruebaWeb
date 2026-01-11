@@ -1,5 +1,6 @@
 ﻿namespace PruebaWeb.Entities
 {
+    // Entidad estado civil
     public class EstadoCivil
     {
         public int Id { get; set; }

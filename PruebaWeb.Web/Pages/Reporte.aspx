@@ -2,7 +2,7 @@
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <!DOCTYPE html>
-
+<!-- Pagina de reporte -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Reporte de Clientes</title>

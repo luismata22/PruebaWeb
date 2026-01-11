@@ -2,6 +2,7 @@
 
 namespace PruebaWeb.Entities
 {
+    // Entidad clientes
     public class Cliente
     {
         public long Id { get; set; }

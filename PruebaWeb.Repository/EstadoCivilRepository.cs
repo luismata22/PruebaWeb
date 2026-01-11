@@ -7,6 +7,7 @@ namespace PruebaWeb.Repository
 {
     public class EstadoCivilRepository
     {
+        // Método de consultar todos los estados civiles
         public List<EstadoCivil> ConsultarEstadoCivil()
         {
             var list = new List<EstadoCivil>();

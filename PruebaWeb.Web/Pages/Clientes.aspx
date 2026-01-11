@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Clientes.aspx.cs" Inherits="PruebaWeb.Web.Pages.Clientes" %>
 
 <!DOCTYPE html>
-
+<!-- Pagina de clientes -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Clientes</title>
@@ -40,11 +40,12 @@
             <div>
                 <h3><i class="fa fa-filter"></i> Filtros</h3>
             </div>
+            <!-- Sección de filtros -->
             <section class="filtros">
                 <div class="grid-2">
                     <div>
                         <label>Cédula</label>
-                        <input type="number" id="fCedula" class="ui-widget ui-widget-content ui-corner-all" title="Digite parte de la cédula para filtrar" />
+                        <input type="text" id="fCedula" class="ui-widget ui-widget-content ui-corner-all" title="Digite parte de la cédula para filtrar" maxlength="8" oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
                     </div>
                     <div>
                         <label>Nombre</label>
@@ -69,13 +70,14 @@
                 </div>
             </section>
             <hr />
+            <!-- Sección de formulario para crear y modificar clientes -->
             <section class="formulario" id="formCliente" style="display: none;">
                 <h3 id="h3NMC"></h3>
                 <input type="hidden" id="id_clie" />
                 <div class="grid-2">
                     <div>
                         <label>Cédula</label>
-                        <input type="number" id="cedula" title="Número de documento del cliente" class="ui-widget ui-widget-content ui-corner-all"/>
+                        <input type="text" id="cedula" title="Número de documento del cliente" class="ui-widget ui-widget-content ui-corner-all" maxlength="8" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
                     </div>
                     <div>
                         <label>Nombre</label>
@@ -104,7 +106,7 @@
                 </div>
                 <hr />
             </section>
-
+            <!-- Sección de la tabla de clienes para mostrar los registros mediante filtros -->
             <section class="grid" style="margin-top: 20px">
                 <table id="tblClientes">
                     <thead>
@@ -127,10 +129,10 @@
     </div>
     <script>
         $(function () {
-            // datepicker
+            // Calendario para la seleccion de fecha
             $('#fecha_nac').datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "1900:+0" });
 
-            // tooltips
+            // Tooltip configuracion
             $(document).tooltip({
                 position: {
                     my: "left center",
@@ -139,6 +141,7 @@
             });
 
             cargarEstadoCivil();
+
             buscar();
 
             $('#btnBuscar').click(buscar);
@@ -168,6 +171,7 @@
             $('#btnLimpiar').click(limpiarfiltros)
         });
 
+        // Método para cargar los estados civiles en el select
         function cargarEstadoCivil() {
             $.ajax({
                 type: "POST",
@@ -190,6 +194,7 @@
             });
         }
 
+        // Método para buscar los clientes mediante filtros para luegos ser visualizados en la tabla de clientes
         function buscar() {
             var payload = {
                 cedula: $('#fCedula').val(),
@@ -237,16 +242,20 @@
             });
         }
 
+        // Método para limpiar los filtros de búsqueda
         function limpiarfiltros() {
-            $('#fCedula,#fNombre').val('');
+            $('#fCedula,#fNombre', '#fGenero').val('');
+            $('#fEstadoCivil').val('-1');
         }
 
+        // Método para limpiar el formulario de registro
         function limpiar() {
             $('#id_clie').val('-1');
             $('#cedula,#nombre,#fecha_nac').val('');
             $('#genero').val('M');
         }
 
+        // Método para  mostrar en el formulario de registro el cliente a modificar
         function editar(id) {
             var payload = {
                 id: id
@@ -276,6 +285,7 @@
             });
         }
 
+        // Método para eliminar clientes
         function eliminar(id) {
             if (!confirm('¿Desea eliminar el registro?')) return;
             const payload = {
@@ -299,6 +309,7 @@
             });
         }
 
+        // Método para guardar y editar los clientes
         function guardar() {
             if (Validardatos()) {
                 const payload = {
@@ -333,6 +344,7 @@
             }
         }
 
+        // Método para validar que todos los campos del formulario de registros esten completos
         function Validardatos() {
             if ($('#cedula').val() == "" || $('#nombre').val() == "" || $('#fecha_nac').val() == "" || $('#estado_civil').val() == "") {
                 var msg = "* Ingrese los datos solicitados (";
@@ -358,6 +370,7 @@
 
         }
 
+        // Método para cerrar sesión
         function cerrarsesion() {
             $.ajax({
                 type: "POST",
